@@ -47,7 +47,7 @@
         const computerChoice = getComputerChoice()
         console.log(playRound(playerSelection,computerChoice))
         */
-        // Game Execution 
+        // Game Execution
         function getComputerChoice() {
             const choiceRPS = ['rock', 'paper', 'scissors']
             randomChoice = choiceRPS[Math.random() * choiceRPS.length | 0] 
@@ -84,9 +84,22 @@
                  console.log("Error! Invalid choice.")
             }
         }
+        function game() {
+            playerSelection = prompt("Rock, Paper, or Scissors?")
+            console.log(playRound(computerChoice, playerSelection));
+            playerSelection = prompt("Rock, Paper, or Scissors?")
+            console.log(playRound(computerChoice, playerSelection));
+            playerSelection = prompt("Rock, Paper, or Scissors?")
+            console.log(playRound(computerChoice, playerSelection));
+            playerSelection = prompt("Rock, Paper, or Scissors?")
+            console.log(playRound(computerChoice, playerSelection));
+            playerSelection = prompt("Rock, Paper, or Scissors?")
+            console.log(playRound(computerChoice, playerSelection));
+        }
         let playerSelection = prompt("Rock, Paper, or Scissors?").toLowerCase(); //all one line
         const computerChoice = getComputerChoice();
         console.log(playRound(computerChoice, playerSelection));
+        game()
     </script>
 </body>
 </html>
