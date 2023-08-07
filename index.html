@@ -104,7 +104,14 @@
             
             totalScore = `The Score is: Player = ${playerScore}, Computer = ${computerScore}`
             console.log(totalScore)
-        }
+            if (playerScore > computerScore){
+                console.log("Player wins!")
+            } else if (computerScore > playerScore){
+                console.log("Computer wins!")
+            }else{
+                console.log("Tie Game!")
+            }
+         }
         let playerScore = 0;
         let computerScore = 0;
         let playerSelection; //all one line
