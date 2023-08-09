@@ -1,12 +1,12 @@
 function getComputerChoice() {
     const choiceRPS = ['rock', 'paper', 'scissors']
-    randomChoice = choiceRPS[Math.random() * choiceRPS.length] 
+    let randomChoice = choiceRPS[Math.floor(Math.random() * choiceRPS.length)] 
     return randomChoice;
 }
 // Round Conditions
-function playRound(computerChoice,playerSelection) {
+function playRound(randomChoice,playerSelection) {
     // Win conditions
-  console.log("computer: " + computerChoice);
+  console.log("computer: " + randomChoice);
   console.log("player:" + playerSelection)
     if (computerChoice === playerSelection){
          console.log("It's a draw!")                
@@ -41,14 +41,19 @@ function playRound(computerChoice,playerSelection) {
     }
 }
 function game() {
+    computerChoice = getComputerChoice();
     playerSelection = prompt("Rock, Paper, or Scissors?").toLowerCase()
     console.log(playRound(computerChoice, playerSelection));
+    computerChoice = getComputerChoice();
     playerSelection = prompt("Rock, Paper, or Scissors?").toLowerCase()
     console.log(playRound(computerChoice, playerSelection));
+    computerChoice = getComputerChoice();
     playerSelection = prompt("Rock, Paper, or Scissors?").toLowerCase()
     console.log(playRound(computerChoice, playerSelection));
+    computerChoice = getComputerChoice();
     playerSelection = prompt("Rock, Paper, or Scissors?").toLowerCase()
     console.log(playRound(computerChoice, playerSelection));
+    computerChoice = getComputerChoice();
     playerSelection = prompt("Rock, Paper, or Scissors?").toLowerCase()
     console.log(playRound(computerChoice, playerSelection));
     
@@ -65,5 +70,5 @@ function game() {
 let playerScore = 0;
 let computerScore = 0;
 let playerSelection; //all one line
-const computerChoice = getComputerChoice();
+let computerChoice;
 game()
