@@ -43,19 +43,19 @@ function playRound(randomChoice,playerSelection) {
 function game() {
     computerChoice = getComputerChoice();
     playerSelection = prompt("Rock, Paper, or Scissors?").toLowerCase()
-    console.log(playRound(computerChoice, playerSelection));
+    playRound(computerChoice, playerSelection);
     computerChoice = getComputerChoice();
     playerSelection = prompt("Rock, Paper, or Scissors?").toLowerCase()
-    console.log(playRound(computerChoice, playerSelection));
+    playRound(computerChoice, playerSelection);
     computerChoice = getComputerChoice();
     playerSelection = prompt("Rock, Paper, or Scissors?").toLowerCase()
-    console.log(playRound(computerChoice, playerSelection));
+    playRound(computerChoice, playerSelection);
     computerChoice = getComputerChoice();
     playerSelection = prompt("Rock, Paper, or Scissors?").toLowerCase()
-    console.log(playRound(computerChoice, playerSelection));
+    playRound(computerChoice, playerSelection);
     computerChoice = getComputerChoice();
     playerSelection = prompt("Rock, Paper, or Scissors?").toLowerCase()
-    console.log(playRound(computerChoice, playerSelection));
+    playRound(computerChoice, playerSelection);
     
     totalScore = `The Score is: Player = ${playerScore}, Computer = ${computerScore}`
     console.log(totalScore)
