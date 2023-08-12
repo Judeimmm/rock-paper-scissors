@@ -41,22 +41,11 @@ function playRound(randomChoice,playerSelection) {
     }
 }
 function game() {
+    for (let i =1; i <= 5; i ++) {   
     computerChoice = getComputerChoice();
     playerSelection = prompt("Rock, Paper, or Scissors?").toLowerCase()
     playRound(computerChoice, playerSelection);
-    computerChoice = getComputerChoice();
-    playerSelection = prompt("Rock, Paper, or Scissors?").toLowerCase()
-    playRound(computerChoice, playerSelection);
-    computerChoice = getComputerChoice();
-    playerSelection = prompt("Rock, Paper, or Scissors?").toLowerCase()
-    playRound(computerChoice, playerSelection);
-    computerChoice = getComputerChoice();
-    playerSelection = prompt("Rock, Paper, or Scissors?").toLowerCase()
-    playRound(computerChoice, playerSelection);
-    computerChoice = getComputerChoice();
-    playerSelection = prompt("Rock, Paper, or Scissors?").toLowerCase()
-    playRound(computerChoice, playerSelection);
-    
+}   
     totalScore = `The Score is: Player = ${playerScore}, Computer = ${computerScore}`
     console.log(totalScore)
     if (playerScore > computerScore){
