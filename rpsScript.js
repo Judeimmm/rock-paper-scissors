@@ -41,11 +41,8 @@ function playRound(randomChoice,playerSelection) {
     }
 }
 function game() {
-    for (let i = 1; i <= 5; i++) {   
     computerChoice = getComputerChoice();
-    playerSelection = prompt("Rock, Paper, or Scissors?").toLowerCase()
     playRound(computerChoice, playerSelection);
-    }   
     totalScore = `The Score is: Player = ${playerScore}, Computer = ${computerScore}`
     console.log(totalScore)
     if (playerScore > computerScore){
@@ -60,4 +57,18 @@ let playerScore = 0;
 let computerScore = 0;
 let playerSelection; //all one line
 let computerChoice;
-game()
+const rock = document.querySelector(".rock");
+rock.addEventListener("click",() => {
+    playerSelection = "rock";
+    return game();
+});
+const paper = document.querySelector(".paper");
+paper.addEventListener("click",() => {
+    playerSelection = "paper"
+    return game()
+});
+const scissors = document.querySelector(".scissors");
+scissors.addEventListener("click", () => {
+    playerSelection = "scissors"
+    return game();
+})
