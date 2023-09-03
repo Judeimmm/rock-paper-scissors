@@ -1,4 +1,4 @@
-function getComputerChoice() {
+function getComputerChoice() { // picks choice for computer
     const choiceRPS = ['rock', 'paper', 'scissors']
     let randomChoice = choiceRPS[Math.floor(Math.random() * choiceRPS.length)] 
     return randomChoice;
@@ -12,28 +12,28 @@ function playRound(randomChoice,playerSelection) {
          console.log("It's a draw!")                
     }
     else if (playerSelection == "rock" && computerChoice == "scissors"){
-        playerScore = ++(playerScore)
+        playerScoreDisplay.innerHTML = ++(playerScore)
          console.log("Rock beats scissors, you win!")
     }
     else if (playerSelection == "paper" && computerChoice == "rock"){
-        playerScore = ++(playerScore)
+        playerScoreDisplay.innerHTML = ++(playerScore)
          console.log("Paper beats rock, nice one!")
     }
     else if (playerSelection == "scissors" && computerChoice == "paper"){
-        playerScore = ++(playerScore)
+        playerScoreDisplay.innerHTML = ++(playerScore)
          console.log("Scissors beats paper, good job!")
     }
     //Loss conditions
     else if (playerSelection == "scissors" && computerChoice == "rock"){
-        computerScore = ++(computerScore)
+        computerScoreDisplay.innerHTML = ++(computerScore)
          console.log("Rock beats scissors, you lose!")
     }
     else if (playerSelection == "rock" && computerChoice == "paper"){
-        computerScore = ++(computerScore)
+        computerScoreDisplay.innerHTML = ++(computerScore)
          console.log("Paper eats rock, you lose!")
     }
     else if (playerSelection == "paper" && computerChoice =="scissors"){
-        computerScore = ++(computerScore)
+        computerScoreDisplay.innerHTML = ++(computerScore)
          console.log("Scissors cuts paper, you lose!")
     }
     else{
@@ -44,17 +44,22 @@ function game() {
     computerChoice = getComputerChoice();
     playRound(computerChoice, playerSelection);
     totalScore = `The Score is: Player = ${playerScore}, Computer = ${computerScore}`
-    console.log(totalScore)
+    const results = document.querySelector(".results")
     if (playerScore > computerScore){
-        console.log("Player wins!")
+        results.innerHTML = "Player wins!"
     } else if (computerScore > playerScore){
-        console.log("Computer wins!")
+        results.innerHTML = "Computer wins!"
     }else{
-        console.log("Tie Game!")
+        results.innerHTML = "Tie Game!"
     }
  }
+
 let playerScore = 0;
+const playerScoreDisplay = document.querySelector(".player-score");
+playerScoreDisplay.innerHTML = `${playerScore}`;
 let computerScore = 0;
+const computerScoreDisplay = document.querySelector(".computer-score");
+computerScoreDisplay.innerHTML = `${computerScore}`
 let playerSelection; //all one line
 let computerChoice;
 const rock = document.querySelector(".rock");
