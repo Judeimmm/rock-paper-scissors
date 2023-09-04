@@ -45,12 +45,16 @@ function game() {
     playRound(computerChoice, playerSelection);
     totalScore = `The Score is: Player = ${playerScore}, Computer = ${computerScore}`
     const results = document.querySelector(".results")
-    if (playerScore > computerScore){
-        results.innerHTML = "Player wins!"
-    } else if (computerScore > playerScore){
-        results.innerHTML = "Computer wins!"
+    if (playerScore == 5){
+        results.innerHTML = "Player wins!";
+        playerScoreDisplay.innerHTML = 0, computerScoreDisplay.innerHTML = 0;
+        return playerScore = 0, computerScore = 0;
+    } else if (computerScore == 5){
+        results.innerHTML = "Computer wins!";
+        playerScoreDisplay.innerHTML = 0, computerScoreDisplay.innerHTML = 0;
+        return playerScore = 0, computerScore = 0;
     }else{
-        results.innerHTML = "Tie Game!"
+        results.innerHTML = "";
     }
  }
 
@@ -59,9 +63,11 @@ const playerScoreDisplay = document.querySelector(".player-score");
 playerScoreDisplay.innerHTML = `${playerScore}`;
 let computerScore = 0;
 const computerScoreDisplay = document.querySelector(".computer-score");
-computerScoreDisplay.innerHTML = `${computerScore}`
+computerScoreDisplay.innerHTML = `${computerScore}`;
+
 let playerSelection; //all one line
 let computerChoice;
+
 const rock = document.querySelector(".rock");
 rock.addEventListener("click",() => {
     playerSelection = "rock";
@@ -76,4 +82,4 @@ const scissors = document.querySelector(".scissors");
 scissors.addEventListener("click", () => {
     playerSelection = "scissors"
     return game();
-})
+});
