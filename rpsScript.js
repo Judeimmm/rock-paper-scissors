@@ -6,35 +6,35 @@ function getComputerChoice() { // picks choice for computer
 // Round Conditions
 function playRound(randomChoice,playerSelection) {
     // Win conditions
-  console.log("computer: " + randomChoice);
-  console.log("player:" + playerSelection)
+  computerHand.innerHTML = "computer: " + randomChoice;
+  playerHand.innerHTML = "player: " + playerSelection;
     if (computerChoice === playerSelection){
-         console.log("It's a draw!")                
+        roundResults.innerHTML = "It's a draw!";
     }
     else if (playerSelection == "rock" && computerChoice == "scissors"){
         playerScoreDisplay.innerHTML = ++(playerScore)
-         console.log("Rock beats scissors, you win!")
+        roundResults.innerHTML ="Rock beats scissors, you win!";
     }
     else if (playerSelection == "paper" && computerChoice == "rock"){
         playerScoreDisplay.innerHTML = ++(playerScore)
-         console.log("Paper beats rock, nice one!")
+         roundResults.innerHTML = "Paper beats rock, nice one!";
     }
     else if (playerSelection == "scissors" && computerChoice == "paper"){
         playerScoreDisplay.innerHTML = ++(playerScore)
-         console.log("Scissors beats paper, good job!")
+         roundResults.innerHTML ="Scissors beats paper, good job!";
     }
     //Loss conditions
     else if (playerSelection == "scissors" && computerChoice == "rock"){
         computerScoreDisplay.innerHTML = ++(computerScore)
-         console.log("Rock beats scissors, you lose!")
+        roundResults.innerHTML = "Rock beats scissors, you lose!";
     }
     else if (playerSelection == "rock" && computerChoice == "paper"){
         computerScoreDisplay.innerHTML = ++(computerScore)
-         console.log("Paper eats rock, you lose!")
+        roundResults.innerHTML = "Paper eats rock, you lose!";
     }
     else if (playerSelection == "paper" && computerChoice =="scissors"){
         computerScoreDisplay.innerHTML = ++(computerScore)
-         console.log("Scissors cuts paper, you lose!")
+        roundResults.innerHTML = "Scissors cuts paper, you lose!";
     }
     else{
          console.log("Error! Invalid choice.")
@@ -67,6 +67,11 @@ computerScoreDisplay.innerHTML = `${computerScore}`;
 
 let playerSelection; //all one line
 let computerChoice;
+
+const playerHand = document.querySelector(".player-hand");
+const computerHand = document.querySelector(".computer-hand")
+
+const roundResults = document.querySelector(".round-results")
 
 const rock = document.querySelector(".rock");
 rock.addEventListener("click",() => {
